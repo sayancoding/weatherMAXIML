@@ -1,0 +1,12 @@
+.head-text{
+  font-size: 2rem;
+}
+input[type="text"]{
+  border: none;
+  background: rgb(222, 233, 255);
+  border-radius: 2px;
+}
+button[type="submit"]{
+  border: none;
+  background: #fff;
+}
