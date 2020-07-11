@@ -1,0 +1,11 @@
+.weather-cel{
+  font-size: 4rem;
+}
+._card{
+  background: rgb(176, 197, 255);
+  border-radius: 4px;
+  padding: 10px 0;
+}
+.card_value{
+  font-size: 1.4rem;
+}

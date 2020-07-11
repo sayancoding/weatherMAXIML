@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <form [formGroup]="citySearch" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName='city' placeholder="enter your city..">
+        <button>Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="row" *ngIf="!isValue">
+    <div class="col-sm-12 text-center py-4">
+      <p class=" text-danger">Need to enter city</p>
+    </div>
+  </div>
+  <div class="row py-4" *ngIf="isValue">
+    <div class="col-sm-12 text-center">
+      <p class="">{{name}},{{country}}</p>
+      <div class="d-flex justify-content-center">
+      <p class="weather-cel">
+        {{temp}}'<span style="font-size: 2rem;">C</span>
+      </p>
+      <img width="50px" height="50px" src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="">
+      </div>
+      <p class="text-center">Last Updated by : {{lastUpdate | date:'dd/MM/yyyy'}} , {{time | date:"HH:mm:ss"}} </p>
+    </div>
+  </div>
+  <div class="row text-center" *ngIf="isValue">
+    <div class="col-sm-2 _card shadow-sm mx-2 my-2">
+      <p>Status</p>
+      <p class="card_value">{{status}}</p>
+    </div>
+    <div class="col-sm-2 _card shadow-sm mx-2 my-2">
+      <p>Description</p>
+      <p class="card_value">It's like {{desc}}</p>
+    </div>
+    <div class="col-sm-2 _card shadow-sm mx-2 my-2">
+      <p>Feels Like</p>
+      <p class="card_value">{{feels_like}}'C</p>
+    </div>
+    <div class="col-sm-2 _card shadow-sm mx-2 my-2">
+      <p>Humidity</p>
+      <p class="card_value">{{humidity}} %</p>
+    </div>
+    <div class="col-sm-2 _card shadow-sm mx-2 my-2">
+      <p>Wind Speed</p>
+      <p class="card_value">{{wind_speed}} kmph</p>
+    </div>
+    <div class="col-sm-2 _card shadow-sm mx-2 my-2">
+      <p>Pressure</p> 
+      <p class="card_value">{{pressure}}</p>      
+    </div>
+  </div>
+</div>
